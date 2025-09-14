@@ -2,8 +2,3 @@ site_name: 도토리 저장소
 site_url: https://localhost
 theme:
   name: material
-nav:
-  - 빠른 시작: index.md
-  - 사용법:
-    - 다램지굴: guide/drzg/index.md
-    - 다램지(봇): guide/drz/index.md
