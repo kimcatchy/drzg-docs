@@ -41,8 +41,7 @@ theme:
       toggle:
         icon: material/brightness-4
         name: 시스템 기본값 사용
-  icon:
-    logo: material/pine-tree  # 도토리 저장소에 어울리는 아이콘
+  logo: media/chip.png
 
 # 상단 메뉴 추가
 extra:

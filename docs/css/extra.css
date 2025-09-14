@@ -67,13 +67,41 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* 홈 탭은 아이콘만 출력 */
+/* 첫 번째 탭에서 텍스트는 숨기고 아이콘만 표시 */
 .md-tabs__item:first-child .md-tabs__link {
-    font-size: 0;
+    text-indent: -9999px;
     overflow: hidden;
+    position: relative;
 }
 
 .md-tabs__item:first-child .md-tabs__link .md-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-indent: 0;
     font-size: 1.2rem;
     display: inline-block;
+}
+
+/* 홈페이지 히어로 섹션 스타일링 */
+.hero-section {
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 카드 그리드 간격 조정 */
+.grid.cards {
+    gap: 1.5rem;
 }
