@@ -2,6 +2,9 @@ site_name: 도토리 저장소
 site_url: https://localhost
 theme:
   name: material
+  font:
+    text: Mabiyet
+    code: Roboto Mono
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
@@ -20,3 +23,5 @@ theme:
       toggle:
         icon: material/brightness-4
         name: 시스템 기본값 사용
+extra_css:
+  - css/extra.css
