@@ -52,12 +52,12 @@
 
 /* 헤더에 그라데이션 적용 */
 .md-header {
-  background-image: linear-gradient(to right, #3b82f6, #1e3a8a);
+  background-image: linear-gradient(to right, #a855f7, #3b82f6);
 }
 
 /* 탐색 탭에 그라데이션 적용 - 헤더보다 약간 연하게 */
 .md-tabs {
-  background-image: linear-gradient(to right, #60a5fa, #2563eb);
+  background-image: linear-gradient(to right, #c084fc, #60a5fa);
 }
 
 /* 코드 블록 스타일링 */
@@ -65,4 +65,15 @@
   border-radius: 0.5rem;
   background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 홈 탭은 아이콘만 출력 */
+.md-tabs__item:first-child .md-tabs__link {
+    font-size: 0;
+    overflow: hidden;
+}
+
+.md-tabs__item:first-child .md-tabs__link .md-icon {
+    font-size: 1.2rem;
+    display: inline-block;
 }
