@@ -4,3 +4,24 @@
     font-weight: normal;
     font-display: swap;
 }
+
+:root {
+  /* Navigation tabs 전용 CSS 변수 정의 */
+  --md-nav-tabs-color: #ffffff;
+  --md-nav-tabs-hover-color: #64b5f6;
+  --md-nav-tabs-active-color: #2196f3;
+  --md-nav-tabs-bg-color: #424242;
+}
+
+.md-tabs {
+  background-color: var(--md-nav-tabs-bg-color);
+}
+.md-tabs__link {
+  color: var(--md-nav-tabs-color);
+}
+.md-tabs__link:hover {
+  color: var(--md-nav-tabs-hover-color);
+}
+.md-tabs__link--active {
+  color: var(--md-nav-tabs-active-color);
+}
