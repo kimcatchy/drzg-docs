@@ -7,7 +7,7 @@
   {%- set class = class ~ " md-header--shadow" -%}
 {%- endif -%}
 <header class="{{ class }}" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="{{ lang.nav.title | e }}">
+  <nav class="md-header__inner md-grid" aria-label="Header navigation">
     <a
       href="{{ config.extra.homepage | d(nav.homepage.url, true) | url }}"
       title="{{ config.site_name | e }}"
@@ -29,10 +29,12 @@
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
-            {%- if page.meta and page.meta.title -%}
+            {%- if page and page.meta and page.meta.title -%}
               {{ page.meta.title }}
-            {%- else -%}
+            {%- elif page and page.title -%}
               {{ page.title }}
+            {%- else -%}
+              {{ config.site_name }}
             {%- endif -%}
           </span>
         </div>
@@ -43,7 +45,7 @@
         <div class="md-select">
           <button
             class="md-header__button md-icon"
-            aria-label="{{ lang.select.language | e }}"
+            aria-label="언어 선택"
           >
             {%- include ".icons/material/translate.svg" -%}
           </button>
@@ -77,7 +79,7 @@
       </div>
     {%- endif -%}
     
-    <!-- 커스텀 다람지굴 버튼 추가 (헤더 우측 끝) -->
+    <!-- 커스텀 다램지굴 버튼 추가 (헤더 우측 끝) -->
     <div class="md-header__option">
       <a 
         href="https://drzg.win" 
