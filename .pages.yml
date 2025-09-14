@@ -1,0 +1,55 @@
+media: media
+content:
+  - name: guide_drzg
+    label: 다램지굴 사용법
+    path: docs/guide/drzg
+    type: collection
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: 제목
+        type: string
+        required: true
+      - name: description
+        label: 설명
+        type: string
+      - name: order
+        label: 순서
+        type: number
+        default: 0
+      - name: body
+        label: 본문
+        type: text  # markdown이 아닌 text
+        required: true
+    filename: 'index.md'
+    view:
+      primary: title
+      fields: [title, description, order]
+      sort: [order, title]
+      
+  - name: guide_drz
+    label: 다램지(봇) 사용법
+    path: docs/guide/drz
+    type: collection
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: 제목
+        type: string
+        required: true
+      - name: description
+        label: 설명
+        type: string
+      - name: order
+        label: 순서
+        type: number
+        default: 0
+      - name: body
+        label: 본문
+        type: text  # markdown이 아닌 text
+        required: true
+    filename: 'index.md'
+    view:
+      primary: title
+      fields: [title, description, order]
+      sort: [order, title]
