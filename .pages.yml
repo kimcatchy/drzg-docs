@@ -13,7 +13,7 @@ content:
       - name: description
         label: 설명
         type: string
-      - name: order
+      - name: weight
         label: 순서
         type: number
         default: 0
@@ -24,8 +24,8 @@ content:
     filename: '{title}.md'
     view:
       primary: title
-      fields: [title, description, order]
-      sort: [order, title]
+      fields: [title, description, weight]
+      sort: [weight, title]
       
   - name: guide_drz
     label: 다램지
@@ -40,7 +40,7 @@ content:
       - name: description
         label: 설명
         type: string
-      - name: order
+      - name: weight
         label: 순서
         type: number
         default: 0
@@ -51,5 +51,43 @@ content:
     filename: '{title}.md'
     view:
       primary: title
-      fields: [title, description, order]
-      sort: [order, title]
+      fields: [title, description, weight]
+      sort: [weight, title]
+
+  - name: patch_notes
+    label: 패치노트
+    path: docs/patch
+    type: collection
+    format: yaml-frontmatter
+    fields:
+      - name: title
+        label: 제목
+        type: string
+        required: true
+      - name: date
+        label: 날짜
+        type: date
+        required: true
+      - name: description
+        label: 요약
+        type: string
+      - name: authors
+        label: 작성자
+        type: list
+        default: ["다램지"]
+      - name: categories
+        label: 카테고리
+        type: list
+        options:
+          - 다램지굴
+          - 다램지
+          - 디스코드
+      - name: body
+        label: 본문
+        type: text
+        required: true
+    filename: '{date|date:YYYY-MM-DD}-{title}.md'
+    view:
+      primary: title
+      fields: [title, date, description, categories]
+      sort: [date:desc, title]
