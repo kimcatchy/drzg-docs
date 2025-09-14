@@ -6,22 +6,63 @@
 }
 
 :root {
-  /* Navigation tabs 전용 CSS 변수 정의 */
+  /* 기존 네비게이션 탭 변수 */
   --md-nav-tabs-color: #ffffff;
   --md-nav-tabs-hover-color: #64b5f6;
   --md-nav-tabs-active-color: #2196f3;
   --md-nav-tabs-bg-color: #424242;
+  
+  /* DRZG.WIN 스타일에 맞춘 색상 변수 */
+  --md-primary-fg-color: #3b82f6;
+  --md-primary-fg-color--dark: #1d4ed8;
+  --md-accent-fg-color: #a855f7;
+  
+  /* 다크 모드 배경 */
+  --md-default-bg-color--dark: #1f2937;
+  
+  /* 링크 및 버튼 색상 */
+  --md-typeset-a-color: #60a5fa;
+  --md-typeset-a-color--hover: #93c5fd;
+  
+  /* 버튼 스타일링 */
+  --md-button-background-color: rgba(96, 165, 250, 0.1);
+  --md-button-border-color: rgba(96, 165, 250, 0.5);
 }
 
+/* 카드 및 박스 스타일링 */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+}
+
+/* 버튼 스타일링 */
+.md-button {
+  transition: all 0.3s;
+  border-radius: 0.5rem;
+}
+
+.md-button:hover {
+  transform: scale(1.05);
+  background-color: rgba(96, 165, 250, 0.2);
+}
+
+/* 헤더에 그라데이션 적용 */
+.md-header {
+  background-image: linear-gradient(to right, #3b82f6, #1e3a8a);
+}
+
+/* 탐색 탭에 그라데이션 적용 */
 .md-tabs {
-  background-color: var(--md-nav-tabs-bg-color);
+  background-image: linear-gradient(to right, #3b82f6, #1e3a8a);
 }
-.md-tabs__link {
-  color: var(--md-nav-tabs-color);
-}
-.md-tabs__link:hover {
-  color: var(--md-nav-tabs-hover-color);
-}
-.md-tabs__link--active {
-  color: var(--md-nav-tabs-active-color);
+
+/* 코드 블록 스타일링 */
+.md-typeset pre {
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }

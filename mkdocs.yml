@@ -14,23 +14,44 @@ theme:
     - navigation.top
     - search.suggest
     - search.highlight
+    - navigation.footer      # 푸터 탐색 추가
+    - content.code.copy      # 코드 복사 버튼
+    - content.action.edit    # 편집 버튼
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
+      primary: custom        # 커스텀 색상 사용
+      accent: purple         # 보라색 강조색
       toggle:
         icon: material/brightness-auto
         name: 라이트 모드
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      scheme: default 
+      scheme: default
+      primary: custom
+      accent: purple
       toggle:
         icon: material/brightness-7
         name: 다크 모드
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: custom
+      accent: purple
       toggle:
         icon: material/brightness-4
         name: 시스템 기본값 사용
+  icon:
+    logo: material/pine-tree  # 도토리 저장소에 어울리는 아이콘
+
+# 상단 메뉴 추가
+extra:
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.drzg.win
+
+# 푸터 커스터마이징
+copyright: Copyright &copy; 2025 DRZG.WIN
+
 extra_css:
   - css/extra.css
