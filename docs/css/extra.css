@@ -55,31 +55,21 @@
   background-image: linear-gradient(to right, #a855f7, #3b82f6);
 }
 
-/* 헤더 타이틀 간격 조정 및 정렬 개선 */
-.md-header__title {
-  margin-left: 1rem !important; /* 로고와의 간격 줄이기 */
-  padding-top: 2px; /* 폰트 특성상 약간의 패딩 추가 */
-  line-height: 1.2;
-}
-
 /* 탐색 탭에 그라데이션 적용 - 헤더보다 약간 연하게 */
 .md-tabs {
   background-image: linear-gradient(to right, #c084fc, #60a5fa);
 }
 
-/* 모바일 햄버거 메뉴(네비게이션 드로어)에 그라데이션 적용 */
-.md-nav--primary {
-  background-image: linear-gradient(to bottom, #a855f7, #3b82f6);
+/* 모바일 드로어 헤더에 그라데이션 적용 (첫 번째 이미지의 파란색 부분) */
+.md-nav--primary .md-nav__title {
+  background-image: linear-gradient(to right, #a855f7, #3b82f6) !important;
+  background-color: transparent !important;
 }
 
-/* 모바일 메뉴 텍스트 색상 조정 */
-.md-nav--primary .md-nav__title,
-.md-nav--primary .md-nav__link {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.md-nav--primary .md-nav__link:hover {
-  color: rgba(255, 255, 255, 1);
+/* 모바일 드로어 헤더의 텍스트와 아이콘 색상 조정 */
+.md-nav--primary .md-nav__title .md-nav__button,
+.md-nav--primary .md-nav__title .md-ellipsis {
+  color: white !important;
 }
 
 /* 코드 블록 스타일링 */
@@ -122,10 +112,6 @@
   .hero-section h1 {
     font-size: 2.5rem;
   }
-  
-  .md-header__title {
-    margin-left: 0.5rem !important;
-  }
 }
 
 @media screen and (max-width: 44.9375em) {
@@ -135,5 +121,6 @@
   
   .hero-section {
     padding: 1rem;
+    min-height: calc(100vh - 7rem); /* 모바일에서 헤더 높이 조정 */
   }
 }
