@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+
+{% block tabs %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+  <div class="md-content__inner md-typeset">
+    <div class="hero-section">
+      <h1>{{ page.title }}</h1>
+      <p>{{ page.content | first_paragraph }}</p>
+    </div>
+    {{ page.content | safe }}
+  </div>
+{% endblock %}
