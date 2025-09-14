@@ -51,7 +51,21 @@ extra:
       link: https://discord.drzg.win
 
 # 푸터 커스터마이징
-copyright: Copyright &copy; 2025 DRZG.WIN
+copyright: ⓒ 2025. DRZG All rights reserved.
 
 extra_css:
   - css/extra.css
+
+plugins:
+  - search
+  - awesome-pages  # 페이지 관리 플러그인 추가
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg

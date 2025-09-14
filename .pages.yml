@@ -1,7 +1,7 @@
-media: media
+media: docs/media
 content:
   - name: guide_drzg
-    label: 다램지굴 사용법
+    label: 다램지굴
     path: docs/guide/drzg
     type: collection
     format: yaml-frontmatter
@@ -21,14 +21,14 @@ content:
         label: 본문
         type: text  # markdown이 아닌 text
         required: true
-    filename: 'index.md'
+    filename: '{title}.md'
     view:
       primary: title
       fields: [title, description, order]
       sort: [order, title]
       
   - name: guide_drz
-    label: 다램지(봇) 사용법
+    label: 다램지
     path: docs/guide/drz
     type: collection
     format: yaml-frontmatter
@@ -48,7 +48,7 @@ content:
         label: 본문
         type: text  # markdown이 아닌 text
         required: true
-    filename: 'index.md'
+    filename: '{title}.md'
     view:
       primary: title
       fields: [title, description, order]
