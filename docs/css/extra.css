@@ -221,7 +221,7 @@
   }
   
   .drzg-home-button__inner::before {
-    content: "🏠";
+    content: "🌰";
     font-size: 1rem;
   }
 }
