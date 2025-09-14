@@ -55,9 +55,31 @@
   background-image: linear-gradient(to right, #a855f7, #3b82f6);
 }
 
+/* 헤더 타이틀 간격 조정 및 정렬 개선 */
+.md-header__title {
+  margin-left: 1rem !important; /* 로고와의 간격 줄이기 */
+  padding-top: 2px; /* 폰트 특성상 약간의 패딩 추가 */
+  line-height: 1.2;
+}
+
 /* 탐색 탭에 그라데이션 적용 - 헤더보다 약간 연하게 */
 .md-tabs {
   background-image: linear-gradient(to right, #c084fc, #60a5fa);
+}
+
+/* 모바일 햄버거 메뉴(네비게이션 드로어)에 그라데이션 적용 */
+.md-nav--primary {
+  background-image: linear-gradient(to bottom, #a855f7, #3b82f6);
+}
+
+/* 모바일 메뉴 텍스트 색상 조정 */
+.md-nav--primary .md-nav__title,
+.md-nav--primary .md-nav__link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.md-nav--primary .md-nav__link:hover {
+  color: rgba(255, 255, 255, 1);
 }
 
 /* 코드 블록 스타일링 */
@@ -67,28 +89,51 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* 히어로 섹션 스타일링 */
+/* 히어로 섹션을 화면 정중앙에 위치시키기 */
 .hero-section {
-    text-align: center;
-    padding: 4rem 2rem;
-    margin-bottom: 2rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none; /* 다른 요소들과 상호작용하지 않도록 */
 }
 
 .hero-section h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    background: linear-gradient(45deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* 카드 그리드 개선 */
-.md-typeset .grid.cards > * {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.hero-section p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-top: 1rem;
 }
 
-.md-typeset .grid.cards > *:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+/* 모바일 반응형 조정 */
+@media screen and (max-width: 76.1875em) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .md-header__title {
+    margin-left: 0.5rem !important;
+  }
+}
+
+@media screen and (max-width: 44.9375em) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section {
+    padding: 1rem;
+  }
 }
