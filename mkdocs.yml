@@ -42,7 +42,7 @@ theme:
       accent: purple
       toggle:
         icon: material/brightness-4
-        name: 시스템 기본값 사용
+        name: 시스템 기본값
   logo: media/chip.png
 
 # 상단 메뉴 추가

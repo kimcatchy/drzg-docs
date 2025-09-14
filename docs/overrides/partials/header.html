@@ -67,6 +67,51 @@
         </div>
       </div>
     {%- endif -%}
+    <!-- 다크모드 토글 버튼 추가 -->
+    {%- if config.theme.palette -%}
+    {%- if not config.theme.palette is mapping -%}
+        <div class="md-header__option">
+        <div class="md-select">
+            {%- set palette = config.theme.palette | first -%}
+            {%- set icon = palette.toggle.icon | default("material/brightness-auto") -%}
+            <button
+            class="md-header__button md-icon"
+            aria-label="{{ palette.toggle.name | e }}"
+            data-md-component="palette"
+            >
+            {%- include ".icons/" ~ icon ~ ".svg" -%}
+            </button>
+            <div class="md-select__inner">
+            <ul class="md-select__list">
+                {%- for option in config.theme.palette -%}
+                {%- set scheme = option.scheme | default("default") -%}
+                {%- set icon = option.toggle.icon | default("material/brightness-auto") -%}
+                <li class="md-select__item">
+                    <button
+                    class="md-select__link"
+                    data-md-color-scheme="{{ scheme }}"
+                    data-md-color-primary="{{ option.primary | replace(' ', '-') }}"
+                    data-md-color-accent="{{ option.accent | replace(' ', '-') }}"
+                    aria-pressed="false"
+                    role="tab"
+                    type="button"
+                    >
+                    <div>
+                        <span class="md-select__icon">
+                        {%- include ".icons/" ~ icon ~ ".svg" -%}
+                        </span>
+                        <span>{{ option.toggle.name }}</span>
+                    </div>
+                    </button>
+                </li>
+                {%- endfor -%}
+            </ul>
+            </div>
+        </div>
+        </div>
+    {%- endif -%}
+    {%- endif -%}
+
     {%- if "material/search" in config.plugins -%}
       <label class="md-header__button md-icon" for="__search">
         {%- include ".icons/material/magnify.svg" -%}
