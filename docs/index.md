@@ -1,6 +1,6 @@
 ---
+title: 홈
 template: home.html
-icon: material/home
 hide:
   - navigation
   - toc
