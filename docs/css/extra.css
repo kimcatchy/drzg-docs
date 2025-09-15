@@ -38,7 +38,7 @@
   /* 라이트 모드 */
   [data-md-color-scheme="default"] {
     /* 왼쪽 사이드바 메뉴 항목 */
-    .md-sidebar--primary .md-nav__link > .md-ellipsis,
+    .md-sidebar--primary md-nav__item--section > .md-nav__link > .md-ellipsis,
     /* 오른쪽 ToC 제목 */
     .md-sidebar--secondary .md-nav__title {
       font-size: 1rem !important;
@@ -49,7 +49,7 @@
   /* 다크 모드 */
   [data-md-color-scheme="slate"] {
     /* 왼쪽 사이드바 메뉴 항목 */
-    .md-sidebar--primary .md-nav__link > .md-ellipsis,
+    .md-sidebar--primary md-nav__item--section > .md-nav__link > .md-ellipsis,
     /* 오른쪽 ToC 제목 */
     .md-sidebar--secondary .md-nav__title {
       font-size: 1rem !important;
