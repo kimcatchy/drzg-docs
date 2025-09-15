@@ -89,7 +89,7 @@ content:
         label: 본문
         type: text
         required: true
-    filename: '${title}.md'
+    filename: '%title%.md'
     view:
       primary: title
       fields: [title, date, description, categories]
