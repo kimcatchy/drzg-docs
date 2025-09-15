@@ -21,7 +21,7 @@ content:
         label: 본문
         type: text  # markdown이 아닌 text
         required: true
-    filename: '{title}.md'
+    filename: '{fields.title}.md'
     view:
       primary: title
       fields: [title, description, weight]
@@ -48,7 +48,7 @@ content:
         label: 본문
         type: text  # markdown이 아닌 text
         required: true
-    filename: '{title}.md'
+    filename: '{fields.title}.md'
     view:
       primary: title
       fields: [title, description, weight]
@@ -89,7 +89,7 @@ content:
         label: 본문
         type: text
         required: true
-    filename: '%title%.md'
+    filename: '{fields.title}.md'
     view:
       primary: title
       fields: [title, date, description, categories]
