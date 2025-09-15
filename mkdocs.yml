@@ -44,7 +44,7 @@ theme:
         icon: material/brightness-4
         name: 시스템 기본값
   logo: assets/chip.png
-  favicon: images/favicon.ico
+  favicon: assets/favicon.ico
 
 # 상단 메뉴 추가
 extra:
