@@ -13,8 +13,8 @@
 /* 로고 이미지/SVG 크기 키우기 */
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
-  height: 2.2rem;         /* 헤더 높이에 맞춰 증가, 필요 시 조절 */
-  width: 2.2rem;          /* 정사각 비율일 때 권장, 비율 유지됨 */
+  height: 2rem;         /* 헤더 높이에 맞춰 증가, 필요 시 조절 */
+  width: 2rem;          /* 정사각 비율일 때 권장, 비율 유지됨 */
   display: block;         /* 고해상도/다크모드 등에서도 동일하게 보이도록 디스플레이 보정(선택) */
 }
 
@@ -172,4 +172,291 @@
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(168, 85, 247, .3);
   color: #fff !important;
+}
+
+/* ====== 키프레임 애니메이션 정의 ====== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* ====== 애니메이션 클래스 ====== */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out both;
+}
+
+/* ====== 배경 장식 ====== */
+.hero-bg-decoration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(168, 85, 247, 0.1), rgba(59, 130, 246, 0.1));
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 120px;
+  height: 120px;
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 80px;
+  height: 80px;
+  top: 70%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  width: 60px;
+  height: 60px;
+  top: 30%;
+  right: 25%;
+  animation-delay: 4s;
+}
+
+.shape-4 {
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 1s;
+}
+
+/* ====== 개선된 히어로 섹션 ====== */
+.hero-section {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+  padding: 0 2rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ====== 히어로 배지 ====== */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.badge-icon {
+  font-size: 1.1rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ====== 개선된 히어로 타이틀 ====== */
+.hero-title {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 1.5rem !important;
+  background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-accent-fg-color), #60a5fa) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  background-size: 200% 200% !important;
+  animation: float 3s ease-in-out infinite !important;
+  text-shadow: 0 0 30px rgba(168, 85, 247, 0.3) !important;
+  line-height: 1.2 !important;
+}
+
+/* ====== 개선된 히어로 설명 ====== */
+.hero-description {
+  font-size: 1.4rem !important;
+  opacity: 0.9 !important;
+  margin-bottom: 2rem !important;
+  line-height: 1.6 !important;
+}
+
+.highlight-text {
+  background: linear-gradient(45deg, #a855f7, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+/* ====== 개선된 버튼 스타일 ====== */
+.enhanced-btn {
+  background: linear-gradient(135deg, #a855f7, #3b82f6, #06b6d4) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 1rem 2rem !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 10px 25px rgba(168, 85, 247, 0.4) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  pointer-events: auto !important;
+}
+
+.enhanced-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.enhanced-btn:hover::before {
+  left: 100%;
+}
+
+.enhanced-btn:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 15px 35px rgba(168, 85, 247, 0.6) !important;
+  color: #fff !important;
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ====== 스크롤 힌트 ====== */
+.hero-scroll-hint {
+  position: absolute;
+  bottom: -15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  opacity: 0.6;
+}
+
+.scroll-text {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.scroll-arrow {
+  font-size: 1.5rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* ====== 모바일 반응형 개선 ====== */
+@media screen and (max-width: 76.1875em) {
+  .hero-title {
+    font-size: 3rem !important;
+  }
+  
+  .hero-description {
+    font-size: 1.2rem !important;
+  }
+  
+  .floating-shape {
+    opacity: 0.5;
+  }
+  
+  .shape-1, .shape-2 { display: none; }
+}
+
+@media screen and (max-width: 44.9375em) {
+  .hero-section {
+    padding: 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem !important;
+  }
+  
+  .enhanced-btn {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .hero-scroll-hint {
+    bottom: -12rem;
+  }
+  
+  .floating-shape {
+    display: none;
+  }
+}
+
+/* ====== 접근성 개선 ====== */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .floating-shape,
+  .hero-title,
+  .badge-icon,
+  .btn-icon,
+  .scroll-arrow {
+    animation: none !important;
+  }
 }
