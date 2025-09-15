@@ -28,10 +28,34 @@
 [data-md-color-scheme="default"] .md-post__title {
   color: #000000 !important;
 }
-
 [data-md-color-scheme="slate"] :is(h1, h2, h3, h4, h5, h6),
 [data-md-color-scheme="slate"] .md-post__title {
   color: #ffffff !important;
+}
+
+/* 사이드바 타이틀 */
+@media (min-width: 769px) {
+  /* 라이트 모드 */
+  [data-md-color-scheme="default"] {
+    /* 왼쪽 사이드바 메뉴 항목 */
+    .md-sidebar--primary .md-nav__link .md-ellipsis,
+    /* 오른쪽 ToC 제목 */
+    .md-sidebar--secondary .md-nav__title {
+      font-size: 1rem !important;
+      color: #000000 !important;
+    }
+  }
+
+  /* 다크 모드 */
+  [data-md-color-scheme="slate"] {
+    /* 왼쪽 사이드바 메뉴 항목 */
+    .md-sidebar--primary .md-nav__link .md-ellipsis,
+    /* 오른쪽 ToC 제목 */
+    .md-sidebar--secondary .md-nav__title {
+      font-size: 1rem !important;
+      color: #ffffff !important;
+    }
+  }
 }
 
 
@@ -44,7 +68,7 @@
   
   /* DRZG.WIN 스타일에 맞춘 색상 변수 */
   --md-primary-fg-color: #a855f7;
-  --md-primary-fg-color--dark: #a855f7;
+  --md-primary-fg-color--dark: #bf7bff;
   --md-accent-fg-color: #3b82f6;
   
   /* 다크 모드 배경 */
