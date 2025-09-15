@@ -5,6 +5,25 @@
     font-display: swap;
 }
 
+/* 1) 로고 컨테이너의 여백 제거 */
+.md-header__button.md-logo {
+  margin: 0;              /* 상하좌우 margin 제거 */           /* [1] */
+  padding: 0;             /* 상하좌우 padding 제거 */          /* [1] */
+}
+
+/* 2) 로고 이미지/SVG 크기 키우기 */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 2.4rem;         /* 헤더 높이에 맞춰 증가, 필요 시 조절 */  /* [1] */
+  width: 2.4rem;          /* 정사각 비율일 때 권장, 비율 유지됨 */   /* [1] */
+}
+
+/* 3) 고해상도/다크모드 등에서도 동일하게 보이도록 디스플레이 보정(선택) */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  display: block;                                                   /* [1] */
+}
+
 :root {
   /* 기존 네비게이션 탭 변수 */
   --md-nav-tabs-color: #ffffff;
