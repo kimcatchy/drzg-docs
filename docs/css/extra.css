@@ -23,6 +23,18 @@
   font-weight: 500;
 }
 
+/* 블로그 포스트 제목도 포함 */
+[data-md-color-scheme="default"] :is(h1, h2, h3, h4, h5, h6),
+[data-md-color-scheme="default"] .md-post__title {
+  color: #000000 !important;
+}
+
+[data-md-color-scheme="slate"] :is(h1, h2, h3, h4, h5, h6),
+[data-md-color-scheme="slate"] .md-post__title {
+  color: #ffffff !important;
+}
+
+
 :root {
   /* 기존 네비게이션 탭 변수 */
   --md-nav-tabs-color: #ffffff;
@@ -39,8 +51,8 @@
   --md-default-bg-color--dark: #1f2937;
   
   /* 링크 및 버튼 색상 */
-  --md-typeset-a-color: #ffcc00;
-  --md-typeset-a-color--hover: #ffdd55;
+  --md-typeset-a-color: #ffcc00 !important;
+  --md-typeset-a-color--hover: #ffdd55 !important;
   
   /* 버튼 스타일링 */
   --md-button-background-color: rgba(96, 165, 250, 0.1);
@@ -89,9 +101,12 @@
 }
 
 /* 모바일 드로어 헤더에 그라데이션 적용 (첫 번째 이미지의 파란색 부분) */
-.md-nav--primary .md-nav__title {
-  background-image: linear-gradient(to right, #a855f7, #3b82f6) !important;
-  background-color: transparent !important;
+/* 768 지정 안하면 블로그 포스트 돌아가기에 그라데이션 씌워짐 */
+@media (max-width: 768px) {
+  .md-nav--primary .md-nav__title {
+    background-image: linear-gradient(to right, #a855f7, #3b82f6) !important;
+    background-color: transparent !important;
+  }
 }
 
 /* 모바일 드로어 헤더의 텍스트와 아이콘 색상 조정 */

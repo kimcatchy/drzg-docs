@@ -5,7 +5,7 @@ theme:
   custom_dir: docs/overrides
   font:
     text: Mabiyet
-    code: Roboto Mono
+    code: Noto Sans KR
   language: ko
   features:
     - navigation.tabs
