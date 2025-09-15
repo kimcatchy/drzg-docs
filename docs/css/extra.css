@@ -5,22 +5,22 @@
     font-display: swap;
 }
 
-/* 1) 로고 컨테이너의 여백 제거 */
+/* 로고 컨테이너의 여백 제거 */
 .md-header__button.md-logo {
-  margin: 0;              /* 상하좌우 margin 제거 */           /* [1] */
+  margin: 0;              /* 상하좌우 margin 제거 */
 }
 
-/* 2) 로고 이미지/SVG 크기 키우기 */
+/* 로고 이미지/SVG 크기 키우기 */
 .md-header__button.md-logo img,
 .md-header__button.md-logo svg {
-  height: 2rem;         /* 헤더 높이에 맞춰 증가, 필요 시 조절 */  /* [1] */
-  width: 2rem;          /* 정사각 비율일 때 권장, 비율 유지됨 */   /* [1] */
+  height: 2.2rem;         /* 헤더 높이에 맞춰 증가, 필요 시 조절 */
+  width: 2.2rem;          /* 정사각 비율일 때 권장, 비율 유지됨 */
+  display: block;         /* 고해상도/다크모드 등에서도 동일하게 보이도록 디스플레이 보정(선택) */
 }
 
-/* 3) 고해상도/다크모드 등에서도 동일하게 보이도록 디스플레이 보정(선택) */
-.md-header__button.md-logo img,
-.md-header__button.md-logo svg {
-  display: block;                                                   /* [1] */
+/* 헤더의 제목 전환 영역 굵기 통일 */
+.md-header__topic .md-ellipsis { 
+  font-weight: 500;
 }
 
 :root {
