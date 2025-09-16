@@ -1,6 +1,6 @@
 ---
-title: etc
-weight: 0
+title: 기타 명령어
+weight: 3
 ---
 ## 주사위
 - 주사위 던지기
