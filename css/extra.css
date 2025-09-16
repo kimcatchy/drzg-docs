@@ -1,0 +1,503 @@
+@font-face {
+    font-family: 'Mabiyet';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/MabinogiClassicR.woff2') format('woff2');
+    font-weight: normal;
+    font-display: swap;
+}
+
+/* 로고 컨테이너의 여백 제거 */
+.md-header__button.md-logo {
+  margin: 0;              /* 상하좌우 margin 제거 */
+}
+
+/* 로고 이미지/SVG 크기 키우기 */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 2rem;         /* 헤더 높이에 맞춰 증가, 필요 시 조절 */
+  width: 2rem;          /* 정사각 비율일 때 권장, 비율 유지됨 */
+  display: block;         /* 고해상도/다크모드 등에서도 동일하게 보이도록 디스플레이 보정(선택) */
+}
+
+/* 헤더의 제목 전환 영역 굵기 통일 */
+.md-header__topic .md-ellipsis { 
+  font-weight: 500;
+}
+
+/* 블로그 포스트 제목도 포함 */
+[data-md-color-scheme="default"] :is(h1, h2, h3, h4, h5, h6),
+[data-md-color-scheme="default"] .md-post__title {
+  color: #000000 !important;
+}
+[data-md-color-scheme="slate"] :is(h1, h2, h3, h4, h5, h6),
+[data-md-color-scheme="slate"] .md-post__title {
+  color: #ffffff !important;
+}
+
+/* 사이드바 타이틀 */
+@media (min-width: 769px) {
+  /* 라이트 모드 */
+  [data-md-color-scheme="default"] {
+    /* 왼쪽 사이드바 메뉴 항목 */
+    .md-sidebar--primary .md-nav__item--section > .md-nav__link > .md-ellipsis,
+    .md-nav--primary .md-nav__item--section > .md-nav__link > .md-nav__link > .md-ellipsis,
+    /* 오른쪽 ToC 제목 */
+    .md-sidebar--secondary .md-nav__title {
+      font-size: 1rem !important;
+      color: #000000 !important;
+    }
+  }
+
+  /* 다크 모드 */
+  [data-md-color-scheme="slate"] {
+    /* 왼쪽 사이드바 메뉴 항목 */
+    .md-sidebar--primary .md-nav__item--section > .md-nav__link > .md-ellipsis,
+    .md-nav--primary .md-nav__item--section > .md-nav__link > .md-nav__link > .md-ellipsis,
+    /* 오른쪽 ToC 제목 */
+    .md-sidebar--secondary .md-nav__title {
+      font-size: 1rem !important;
+      color: #ffffff !important;
+    }
+  }
+}
+
+
+:root {
+  /* 기존 네비게이션 탭 변수 */
+  --md-nav-tabs-color: #ffffff;
+  --md-nav-tabs-hover-color: #64b5f6;
+  --md-nav-tabs-active-color: #2196f3;
+  --md-nav-tabs-bg-color: #424242;
+  
+  /* DRZG.WIN 스타일에 맞춘 색상 변수 */
+  --md-primary-fg-color: #a855f7;
+  --md-primary-fg-color--dark: #bf7bff;
+  --md-accent-fg-color: #3b82f6;
+  
+  /* 다크 모드 배경 */
+  --md-default-bg-color--dark: #1f2937;
+  
+  /* 링크 및 버튼 색상 */
+  --md-typeset-a-color: #ffcc00 !important;
+  --md-typeset-a-color--hover: #ffdd55 !important;
+  
+  /* 버튼 스타일링 */
+  --md-button-background-color: rgba(96, 165, 250, 0.1);
+  --md-button-border-color: rgba(96, 165, 250, 0.5);
+}
+
+/* 카드 및 박스 스타일링 */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+}
+
+/* 버튼 스타일링 */
+.md-button {
+  transition: all 0.3s;
+  border-radius: 0.5rem;
+}
+
+.md-button:hover {
+  transform: scale(1.05);
+  background-color: rgba(96, 165, 250, 0.2);
+}
+
+/* 헤더에 그라데이션 적용 */
+.md-header {
+  background-image: linear-gradient(to right, #a855f7, #3b82f6);
+}
+
+/* 헤더 타이틀의 왼쪽 마진을 0으로 설정 */
+.md-header__title {
+  margin-left: 0 !important;
+}
+
+/* 헤더 토픽의 위쪽 패딩을 0.1rem으로 설정 */
+.md-header__topic {
+  padding-top: 0.1rem !important;
+}
+
+/* 탐색 탭에 그라데이션 적용 - 헤더보다 약간 연하게 */
+.md-tabs {
+  background-image: linear-gradient(to right, #c084fc, #60a5fa);
+}
+
+/* 모바일 드로어 헤더에 그라데이션 적용 (첫 번째 이미지의 파란색 부분) */
+/* 768 지정 안하면 블로그 포스트 돌아가기에 그라데이션 씌워짐 */
+@media (max-width: 768px) {
+  .md-nav--primary .md-nav__title {
+    background-image: linear-gradient(to right, #a855f7, #3b82f6) !important;
+    background-color: transparent !important;
+  }
+}
+
+/* 모바일 드로어 헤더의 텍스트와 아이콘 색상 조정 */
+.md-nav--primary .md-nav__title .md-nav__button,
+.md-nav--primary .md-nav__title .md-ellipsis {
+  color: white !important;
+}
+
+/* 코드 블록 스타일링 */
+.md-typeset pre {
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 히어로 섹션을 화면 정중앙에 위치시키기 */
+.hero-section {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none; /* 다른 요소들과 상호작용하지 않도록 */
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, var(--md-primary-fg-color), var(--md-accent-fg-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin-top: 1rem;
+}
+
+/* 모바일 반응형 조정 */
+@media screen and (max-width: 76.1875em) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 44.9375em) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-section {
+    padding: 1rem;
+    min-height: calc(100vh - 7rem); /* 모바일에서 헤더 높이 조정 */
+  }
+}
+
+/* 홈 히어로 액션 버튼 */
+.hero-actions {
+  margin-top: 1rem;
+}
+
+.drzg-return-btn {
+  background: linear-gradient(45deg, #a855f7, #3b82f6) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  padding: 0.6rem 1rem !important;
+  font-weight: 600 !important;
+  transition: transform .15s ease, box-shadow .15s ease !important;
+}
+
+.drzg-return-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(168, 85, 247, .3);
+  color: #fff !important;
+}
+
+/* ====== 키프레임 애니메이션 정의 ====== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(5deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* ====== 애니메이션 클래스 ====== */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out both;
+}
+
+/* ====== 배경 장식 ====== */
+.hero-bg-decoration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(45deg, rgba(168, 85, 247, 0.1), rgba(59, 130, 246, 0.1));
+  animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 {
+  width: 120px;
+  height: 120px;
+  top: 15%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  width: 80px;
+  height: 80px;
+  top: 70%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  width: 60px;
+  height: 60px;
+  top: 30%;
+  right: 25%;
+  animation-delay: 4s;
+}
+
+.shape-4 {
+  width: 100px;
+  height: 100px;
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 1s;
+}
+
+/* ====== 개선된 히어로 섹션 ====== */
+.hero-section {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+  padding: 0 2rem;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ====== 히어로 배지 ====== */
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.badge-icon {
+  font-size: 1.1rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ====== 개선된 히어로 타이틀 ====== */
+.hero-title {
+  font-size: 4rem !important;
+  font-weight: 800 !important;
+  margin-bottom: 1.5rem !important;
+  background: linear-gradient(135deg, var(--md-primary-fg-color), var(--md-accent-fg-color), #60a5fa) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  background-size: 200% 200% !important;
+  animation: float 3s ease-in-out infinite !important;
+  text-shadow: 0 0 30px rgba(168, 85, 247, 0.3) !important;
+  line-height: 1.2 !important;
+}
+
+/* ====== 개선된 히어로 설명 ====== */
+.hero-description {
+  font-size: 1.4rem !important;
+  opacity: 0.9 !important;
+  margin-bottom: 2rem !important;
+  line-height: 1.6 !important;
+}
+
+.highlight-text {
+  background: linear-gradient(45deg, #a855f7, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+/* ====== 개선된 버튼 스타일 ====== */
+.enhanced-btn {
+  background: linear-gradient(135deg, #a855f7, #3b82f6, #06b6d4) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 1rem 2rem !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 10px 25px rgba(168, 85, 247, 0.4) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  pointer-events: auto !important;
+}
+
+.enhanced-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.enhanced-btn:hover::before {
+  left: 100%;
+}
+
+.enhanced-btn:hover {
+  transform: translateY(-3px) scale(1.02) !important;
+  box-shadow: 0 15px 35px rgba(168, 85, 247, 0.6) !important;
+  color: #fff !important;
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* ====== 스크롤 힌트 ====== */
+.hero-scroll-hint {
+  position: absolute;
+  bottom: -15rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  opacity: 0.6;
+}
+
+.scroll-text {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.scroll-arrow {
+  font-size: 1.5rem;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+/* ====== 모바일 반응형 개선 ====== */
+@media screen and (max-width: 76.1875em) {
+  .hero-title {
+    font-size: 3rem !important;
+  }
+  
+  .hero-description {
+    font-size: 1.2rem !important;
+  }
+  
+  .floating-shape {
+    opacity: 0.5;
+  }
+  
+  .shape-1, .shape-2 { display: none; }
+}
+
+@media screen and (max-width: 44.9375em) {
+  .hero-section {
+    padding: 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem !important;
+  }
+  
+  .enhanced-btn {
+    padding: 0.8rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+  
+  .hero-scroll-hint {
+    bottom: -12rem;
+  }
+  
+  .floating-shape {
+    display: none;
+  }
+}
+
+/* ====== 접근성 개선 ====== */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .floating-shape,
+  .hero-title,
+  .badge-icon,
+  .btn-icon,
+  .scroll-arrow {
+    animation: none !important;
+  }
+}
