@@ -1,5 +1,5 @@
 ---
-title: party
+title: 파티 일정 관리
 weight: 2
 ---
 ## 파티 생성
