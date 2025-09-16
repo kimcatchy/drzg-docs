@@ -1,6 +1,6 @@
 ---
-title: friend
-weight: 0
+title: 친구 관리
+weight: 3
 ---
 ## 친구 코드
 - 사이트 우측 상단의 프로필 이미지 클릭 시 프로필 메뉴 출력
