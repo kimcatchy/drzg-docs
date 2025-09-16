@@ -1,5 +1,5 @@
 ---
-title: char
+title: 캐릭터 관리
 weight: 1
 ---
 ## 계정 관리
