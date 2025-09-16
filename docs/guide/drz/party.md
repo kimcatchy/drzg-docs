@@ -1,5 +1,5 @@
 ---
-title: party
+title: 파티 관련 명령어
 weight: 2
 ---
 ## 파티
