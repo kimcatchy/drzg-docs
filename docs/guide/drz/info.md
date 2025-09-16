@@ -1,5 +1,5 @@
 ---
-title: info
+title: 정보 관련 명령어
 weight: 0
 ---
 ## 에린
