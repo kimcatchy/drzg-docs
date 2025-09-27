@@ -1,0 +1,43 @@
+{% extends "main.html" %}
+{% block tabs %}
+  {{ super() }}
+{% endblock %}
+{% block content %}
+  <div class="md-content__inner md-typeset">
+    <!-- 배경 장식 요소들 -->
+    <div class="hero-bg-decoration">
+      <div class="floating-shape shape-1"></div>
+      <div class="floating-shape shape-2"></div>
+      <div class="floating-shape shape-3"></div>
+      <div class="floating-shape shape-4"></div>
+    </div>
+    
+    <div class="hero-section">
+      <div class="hero-content">
+        <h1 class="hero-title animate-fade-in-up" style="animation-delay: 0.4s;">
+          도토리 저장소
+        </h1>
+        
+        <p class="hero-description animate-fade-in-up" style="animation-delay: 0.6s;">
+          <span class="highlight-text">사용법</span> • 
+          <span class="highlight-text">패치노트</span> • 
+          <span class="highlight-text">정보</span>
+        </p>
+        
+        <div class="hero-actions animate-fade-in-up" style="animation-delay: 0.8s;">
+          <a
+            href="https://drzg.win"
+            class="md-button md-button--primary drzg-return-btn enhanced-btn"
+            title="다램지굴로 돌아가기"
+          >
+            <span class="btn-icon">🌰</span>
+            <span class="btn-text">다램지굴 돌아가기</span>
+            <span class="btn-icon">🌰</span>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    {{ page.content | safe }}
+  </div>
+{% endblock %}
